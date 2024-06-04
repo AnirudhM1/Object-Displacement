@@ -1,0 +1,18 @@
+sam:
+    model: vit_b
+    checkpoint: checkpoints/sam_vit_b_01ec64.pth
+
+clip:
+    model: openai/clip-vit-large-patch14
+    processor: openai/clip-vit-large-patch14
+
+diffusion:
+    model: diffusers/stable-diffusion-xl-1.0-inpainting-0.1
+    harmonization_width: 50 # Mask applied around the object after being pasted to ensure proper harmonization with background
+    random_mask_probability: 0.9 # Probability of masking data around the original object to ensure that there is no new object in it's stead
+    random_mask_width: 10 # Mask width around the original object to ensure that there is no new object in it's stead
+    background_prompt: background # Prompt used to generate the contents of the mask
+    img_size: 1024
+    num_inference_steps: 50
+    guidance_scale: 9.0
+    strength: 0.99

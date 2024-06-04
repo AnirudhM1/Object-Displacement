@@ -1,0 +1,6 @@
+diffusers
+pillow
+PyYAML
+tqdm
+transformers
+accelerate
